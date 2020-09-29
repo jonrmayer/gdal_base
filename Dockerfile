@@ -37,5 +37,5 @@ COPY --from=builder  /build_proj/usr/include/ /gdal/build_proj/usr/include/
 COPY --from=builder  /build_proj/usr/bin/ /gdal/build_proj/usr/bin/
 COPY --from=builder  /build_proj/usr/lib/ /gdal/build_proj/usr/lib/
 
-COPY --from=builder  /build/usr/share/gdal/ /gdal/usr/share/gdal/
-COPY --from=builder  /build/usr/include/ /gdal/usr/include/
+COPY --from=builder  /build/usr/local/share/gdal/ /gdal/usr/share/gdal/
+COPY --from=builder  /build/usr/local/include/ /gdal/usr/include/
