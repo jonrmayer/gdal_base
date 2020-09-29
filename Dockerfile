@@ -28,7 +28,6 @@ RUN  cd gdal-2.3.0 \
 	
 
 
-
 FROM jonrmayer/gdal_alpine:latest as runner
 
 COPY --from=builder  /build_projgrids/usr/  /gdal/build_projgrids/usr/share/proj/
