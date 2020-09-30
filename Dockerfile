@@ -28,6 +28,14 @@ RUN  cd gdal-2.3.0 \
 	
 
 
+RUN  mkdir -p /build_gdal_version_changing/usr/include \
+    && mv /build/usr/local/lib                    /build_gdal_version_changing/usr \
+    && mv /build/usr/local/include/gdal_version.h /build_gdal_version_changing/usr/include \
+    && mv /build/usr/local/bin                    /build_gdal_version_changing/usr \
+	
+
+
+
 FROM jonrmayer/gdal_alpine:latest as runner
 
 COPY --from=builder  /build_projgrids/usr/  /gdal/build_projgrids/usr/share/proj/
@@ -39,3 +47,7 @@ COPY --from=builder  /build_proj/usr/lib/ /gdal/build_proj/usr/lib/
 
 COPY --from=builder  /build/usr/local/share/gdal/ /gdal/usr/share/gdal/
 COPY --from=builder  /build/usr/local/include/ /gdal/usr/include/
+
+
+COPY --from=builder  /build_gdal_version_changing/usr/ /gdal/usr/
+
