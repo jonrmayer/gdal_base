@@ -49,5 +49,7 @@ COPY --from=builder  /build/usr/local/share/gdal/ /gdal/usr/share/gdal/
 COPY --from=builder  /build/usr/local/include/ /gdal/usr/include/
 
 
-COPY --from=builder  /build_gdal_version_changing/usr/ /gdal/usr/
+COPY --from=builder  /build/usr/local/lib/ /gdal/usr/
+COPY --from=builder  /build/usr/local/include/ /gdal/usr/include/
+COPY --from=builder  /build/usr/local/bin/ /gdal/usr/usr/
 
