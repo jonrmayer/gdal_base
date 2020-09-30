@@ -28,13 +28,6 @@ RUN  cd gdal-2.3.0 \
 	
 
 
-RUN  mkdir -p /build_gdal_version_changing/usr/include \
-    && mv /build/usr/local/lib                    /build_gdal_version_changing/usr \
-    && mv /build/usr/local/include/gdal_version.h /build_gdal_version_changing/usr/include \
-    && mv /build/usr/local/bin                    /build_gdal_version_changing/usr \
-	
-
-
 
 FROM jonrmayer/gdal_alpine:latest as runner
 
